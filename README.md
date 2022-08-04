@@ -14,4 +14,4 @@ Use build + jasmine (preffered): npm run test
 
 
 Using the API
-The image processing api expects the user to input the following parameters: filename, width, height. If no parameters are specified, a default image will be returned. A sample URL would look as follows: http://localhost:3000/images?width=100&height=100&filename=fjord
+The image processing api expects the user to input the following parameters: filename, width, height. If no parameters are specified, a default image will be returned. A sample URL would look as follows: http://localhost:3000/api/images?width=100&height=100&filename=fjord
