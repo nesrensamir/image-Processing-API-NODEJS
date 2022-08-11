@@ -4,7 +4,7 @@
 Starting scripts
 The project uses the following scripts:
 
-Start via nodemon: npm run start
+* Start via nodemon: npm run start
 * Use prettier: npm run prettier
 * Use eslint: npm run lint
 * Build the project: npm run build
