@@ -37,10 +37,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
-};
+}
 Object.defineProperty(exports, "__esModule", { value: true });
 var supertest_1 = __importDefault(require("supertest"));
 var index_1 = __importDefault(require("../index"));
+var resize_1 = __importDefault(require("../middleware/resize"));
+var fs_1 = __importDefault(require("fs"));
 var request = (0, supertest_1.default)(index_1.default);
 describe('test the endpoints ', function () {
     it('test /api', function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -64,6 +66,34 @@ describe('test the endpoints ', function () {
                     response = _a.sent();
                     expect(response.status).toBe(200);
                     return [2 /*return*/];
+            }
+        });
+    }); });
+});
+describe('test resize fn', function () {
+    it('test resize', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var width, height, imagename, err_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 2, 3]);
+                    width = 111;
+                    height = 400;
+                    imagename = 'palmtunnel';
+                    return [4 /*yield*/, (0, resize_1.default)("../../images/full/".concat(imagename, ".jpg"), width, height, "../../images/thumbnails/".concat(imagename).concat(width).concat(height, ".jpg"))];
+                case 1:
+                    _a.sent();
+                    expect(fs_1.default.access("../../images/thumbnails/".concat(imagename).concat(width).concat(height, ".jpg"), function (Notexist) {
+                        if (Notexist) {
+                            
+                            ('Image Resized Successfully');
+                        }
+                    }));
+                    return [3 /*break*/, 3];
+                case 2:
+                    err_1 = _a.sent();
+                    return [2 /*return*/, 'Image cannot be resized you need to check Image existance on the original folder & the values of width and height '];
+                case 3: return [2 /*return*/];
             }
         });
     }); });
