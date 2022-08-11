@@ -5,12 +5,12 @@ Starting scripts
 The project uses the following scripts:
 
 Start via nodemon: npm run start
-Use prettier: npm run prettier
-Use eslint: npm run lint
-Build the project: npm run build
-Start the server after build: node ./build/.
-Use jasmine only: npm run jasmine
-Use build + jasmine (preffered): npm run test 
+* Use prettier: npm run prettier
+* Use eslint: npm run lint
+* Build the project: npm run build
+* Start the server after build: node ./build/.
+* Use jasmine only: npm run jasmine
+* Use build + jasmine (preffered): npm run test 
 
 
 Using the API
