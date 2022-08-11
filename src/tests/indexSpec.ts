@@ -1,5 +1,5 @@
 import supertest from 'supertest' 
-import app from '../index'; 
+import app from '../index'
 import resize from '../middleware/resize'
 import fs from 'fs'
 
@@ -45,7 +45,7 @@ describe('test resize fn',()=>{
               `../../images/thumbnails/${imagename}${width}${height}.jpg`,
               (Notexist) => {
                  if (Notexist) {
-                    ;('Image Resized Successfully')
+                    ('Image Resized Successfully')
                  }
               }
            )
