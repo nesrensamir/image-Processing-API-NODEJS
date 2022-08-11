@@ -1,5 +1,8 @@
 import supertest from 'supertest' 
-import app from '../index';
+import app from '../index'; 
+import resize from '../middleware/resize'
+import fs from 'fs'
+
 
 
 const request = supertest(app);
